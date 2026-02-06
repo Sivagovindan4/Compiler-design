@@ -1,14 +1,4 @@
-#!/usr/bin/env python3
-"""
-A robust Python lexer (extended output).
 
-Updates from previous version:
-- Token dataclass now includes start_offset (inclusive, 0-based) and end_offset (exclusive, 0-based).
-- end_col is inclusive.
-- Lexer has `emit_comments` option to control whether comments are returned as tokens.
-- Added Token.to_dict() and Lexer.tokens_to_json() for machine-readable output.
-- CLI: run without args to pretty-print tokens, use `--json` to print JSON array.
-"""
 from dataclasses import dataclass
 import re
 import ast
@@ -310,4 +300,5 @@ int main() {
     else:
         for t in lexer.tokenize():
             print(f"{t.type:8} {t.lexeme!r:20} value={t.value!r:12}  "
+
                   f"[offs {t.start_offset}-{t.end_offset}) lines {t.start_line}:{t.start_col}-{t.end_line}:{t.end_col}]")
