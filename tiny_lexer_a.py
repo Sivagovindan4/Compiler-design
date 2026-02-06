@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-Tiny lexer (Option A)
-
-Usage:
-    python tiny_lexer_a.py
-
-This prints tokens for a small sample. Import and use `tokenize(code)` in your own code.
-"""
 import re
 import ast
 from collections import namedtuple
@@ -97,4 +89,5 @@ if x == 42 {
 }
 '''
     for tok in tokenize(sample):
+
         print(tok)
